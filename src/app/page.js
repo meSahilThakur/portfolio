@@ -1,9 +1,14 @@
-import Image from 'next/image'
+import HeroSection from "@/components/HeroSection";
+import Navbar from "@/components/Navbar";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col bg-[#121212]">
-      <h1>portfolio</h1>
+      <Navbar />
+      <div className="container mx-auto mt-24 px-12 py-4">
+        <HeroSection />
+      </div>
     </main>
-  )
+  );
 }
