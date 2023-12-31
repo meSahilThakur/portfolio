@@ -1,7 +1,8 @@
-'use client'
-import React, { useState } from "react";
+"use client";
+import React, { useState, useRef } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
+import { animate, motion, useInView } from "framer-motion";
 
 const projectsData = [
   {
@@ -11,7 +12,7 @@ const projectsData = [
     img: "/images/live_project-imgs/color_search_tool.png",
     tag: ["All", "Web"],
     gitUrl: "/",
-    previewUrl: "/"
+    previewUrl: "/",
   },
   {
     id: 2,
@@ -20,7 +21,7 @@ const projectsData = [
     img: "/images/live_project-imgs/todoApp.png",
     tag: ["All", "Web"],
     gitUrl: "/",
-    previewUrl: "/"
+    previewUrl: "/",
   },
   {
     id: 3,
@@ -29,7 +30,7 @@ const projectsData = [
     img: "/images/live_project-imgs/match_bubble.png",
     tag: ["All", "Web"],
     gitUrl: "/",
-    previewUrl: "/"
+    previewUrl: "/",
   },
   {
     id: 4,
@@ -38,43 +39,73 @@ const projectsData = [
     img: "/images/live_project-imgs/netflix_home.png",
     tag: ["All", "Web"],
     gitUrl: "/",
-    previewUrl: "/"
+    previewUrl: "/",
   },
 ];
 
 const ProjectSection = () => {
+  const [tag, setTag] = useState("All");
 
-    const [tag, setTag] = useState("All");
+  const handleTagChange = (newTag) => {
+    setTag(newTag);
+  };
 
-    const handleTagChange = (newTag) => {
-        setTag(newTag);
-    }
+  const filteredProjects = projectsData.filter((project) =>
+    project.tag.includes(tag)
+  );
 
-    const filteredProjects = projectsData.filter((project) =>
-        project.tag.includes(tag)
-    );
+  //Animations
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  const cardVariants = {
+    initial: { y: 50, opacity: 0 },
+    animate: { y: 0, opacity: 1 },
+  };
 
   return (
     <div>
-      <h2 className="text-center text-white text-4xl font-bold mt-4">My Projects</h2>
+      <h2 className="text-center text-white text-4xl font-bold mt-4">
+        My Projects
+      </h2>
       <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
-        <ProjectTag onClick={handleTagChange} name={"All"} isSelected={tag === "All"} />
-        <ProjectTag onClick={handleTagChange} name={"Web"} isSelected={tag === "Web"} />
-        <ProjectTag onClick={handleTagChange} name={"Mobile"} isSelected={tag === "Mobile"} />
+        <ProjectTag
+          onClick={handleTagChange}
+          name={"All"}
+          isSelected={tag === "All"}
+        />
+        <ProjectTag
+          onClick={handleTagChange}
+          name={"Web"}
+          isSelected={tag === "Web"}
+        />
+        <ProjectTag
+          onClick={handleTagChange}
+          name={"Mobile"}
+          isSelected={tag === "Mobile"}
+        />
       </div>
-      <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-        {filteredProjects.map((project) => (
-          <ProjectCard
-            key={project.id}
-            title={project.title}
-            description={project.description}
-            imgUrl={project.img}
-            tags={project}
-            gitUrl={project.gitUrl}
-            previewUrl={project.previewUrl}
-          />
+      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
+        {filteredProjects.map((project, index) => (
+          <motion.li
+            key={index}
+            variants={cardVariants}
+            initial="initial"
+            animate={isInView ? "animate" : "initial"}
+            transition={{duration:0.4, delay: index * 0.5}}
+          >
+            <ProjectCard
+              key={project.id}
+              title={project.title}
+              description={project.description}
+              imgUrl={project.img}
+              tags={project}
+              gitUrl={project.gitUrl}
+              previewUrl={project.previewUrl}
+            />
+          </motion.li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };
