@@ -8,38 +8,38 @@ const projectsData = [
   {
     id: 1,
     title: "Color Search",
-    description: "Project 1 description",
+    description: "Your ultimate companion for effortlessly finding and matching colors!",
     img: "/images/live_project-imgs/color_search_tool.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/meSahilThakur/ColorSearchTool",
+    previewUrl: "https://colorsearchtool.netlify.app",
   },
   {
     id: 2,
     title: "My Todos",
-    description: "Project 2 description",
+    description: "A powerful and intuitive task management tool designed to streamline your daily productivity!",
     img: "/images/live_project-imgs/todoApp.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/meSahilThakur/todoApp",
+    previewUrl: "https://mytodoscontext.netlify.app",
   },
   {
     id: 3,
     title: "Match the Bubble",
-    description: "Project 3 description",
+    description: "A delightful and engaging game that combines entertainment with cognitive challenge!",
     img: "/images/live_project-imgs/match_bubble.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/meSahilThakur/BubbleGame",
+    previewUrl: "https://matchthebubble.netlify.app",
   },
   {
     id: 4,
     title: "Netflix Home",
-    description: "Project 4 description",
+    description: " Elevate your entertainment journey with a sleek and responsive design that puts the spotlight on your favorite shows and movies.",
     img: "/images/live_project-imgs/netflix_home.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/meSahilThakur/react-netflix",
+    previewUrl: "https://netflix-homeclone.netlify.app",
   },
 ];
 
@@ -64,7 +64,7 @@ const ProjectSection = () => {
   };
 
   return (
-    <div>
+    <div id="projects">
       <h2 className="text-center text-white text-4xl font-bold mt-4">
         My Projects
       </h2>
