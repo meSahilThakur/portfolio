@@ -92,7 +92,7 @@ const ProjectSection = () => {
             variants={cardVariants}
             initial="initial"
             animate={isInView ? "animate" : "initial"}
-            transition={{duration:0.4, delay: index * 0.5}}
+            transition={{duration:0.3, delay: index * 0.4}}
           >
             <ProjectCard
               key={project.id}

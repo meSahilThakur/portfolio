@@ -24,11 +24,11 @@ const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
-    <nav className="fixed mx-auto border border-[#33353F] top-0 right-0 left-0 z-20 bg-[#121212] bg-opacity-95">
+    <nav className="fixed mx-auto border border-[#33353F] top-0 right-0 left-0 z-20 bg-[#121212] bg-opacity-90">
       <div className="flex container lg:py-4 flex-wrap justify-between items-center mx-auto px-4 py-2">
         <Link
           href={"/"}
-          className="text-3xl md:text-5xl font-semibold text-white"
+          className="text-3xl md:text-5xl font-semibold text-secondary-500"
         >
           ST
         </Link>

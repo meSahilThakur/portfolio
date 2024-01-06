@@ -4,6 +4,7 @@ import axios from "axios";
 import Link from "next/link";
 import React, { useState } from "react";
 import Swal from 'sweetalert2'
+import {FaFacebook, FaGithub, FaInstagram, FaLinkedin} from 'react-icons/fa';
 
 const EmailSection = () => {
     
@@ -97,7 +98,7 @@ const EmailSection = () => {
     <section id="contact" className="grid md:grid-cols-2 my-12 py-24 gap-4 relative">
       <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-md absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2 "></div>
       <div className="z-10">
-        <h5 className="text-xl font-bold text-white my-2">Let's Connect</h5>
+        <h5 className="text-2xl font-bold text-white my-2">Let's Connect</h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
           I'm currently looking for new opportunities, my inbox is always open.
           Whether you have a question or just want to say hi, I'll try my best
@@ -105,14 +106,20 @@ const EmailSection = () => {
         </p>
         <div className="socials flex flex-row gap-2">
           <Link href={"https://github.com/meSahilThakur/"} target="_blank">
-            <LinkIcon className="h-5 w-5" />
+            <FaGithub className="h-8 w-8 hover:scale-110" />
           </Link>
           <Link href={"https://linkedin.com/in/meSahilThakur/"} target="_blank">
-            <LinkIcon className="h-5 w-5" />
+            <FaLinkedin className="h-8 w-8 bg-blue-700 rounded hover:scale-110" />
+          </Link>
+          <Link href={"https://instagram.com/me.sahilthakur?igshid=MzNINGNkZWQ4Mg=="} target="_blank">
+            <FaInstagram className="h-8 w-8 bg-gradient-to-br from-purple-700 via-pink-500 to-yellow-500 rounded hover:scale-110" />
+          </Link>
+          <Link href={"https://facebook.com/sahil.thakur.5855594?mibextid=AQCFcj8imgCIWYJ5"} target="_blank">
+            <FaFacebook className="h-8 w-8 bg-blue-700 rounded hover:scale-110" />
           </Link>
         </div>
       </div>
-      <div className="z-10">
+      <div className="mt-4 md:mt-0 z-10">
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
 
 

@@ -51,7 +51,7 @@ const HeroSection = () => {
                 Hire Me
               </button>
             </Link>
-            <Link href={"/"}>
+            <Link href={"/cv/SahilThakur@Resume.pdf"}>
               <button className="px-1 py-1 rounded-full w-full sm:w-fit bg-transparent bg-gradient-to-br from-primary-500 to-secondary-700 hover:bg-slate-800 text-white mt-3">
                 <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
                   Download CV
@@ -66,10 +66,10 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="col-span-4 place-self-center mt-4 lg:mt-0"
         >
-          <div className="border border-r-4 border-secondary-400 rounded-full bg-[#333] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative">
+          <div className="border border-r-4 border-secondary-400 rounded-full bg-[#333] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative overflow-hidden">
             <Image
               className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              src={"/images/hero-image.png"}
+              src={"/images/mypic1.png"}
               alt="hero img"
               width={300}
               height={300}
