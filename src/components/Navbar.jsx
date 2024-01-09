@@ -5,6 +5,9 @@ import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
 
+import {FaFacebook, FaGithub, FaInstagram, FaLinkedin} from 'react-icons/fa';
+
+
 const navLinks = [
   {
     title: "About",
@@ -33,6 +36,21 @@ const Navbar = () => {
           ST
         </Link>
 
+        <div className="socials flex flex-row gap-2">
+          <Link href={"https://github.com/meSahilThakur/"} target="_blank">
+            <FaGithub className="h-8 w-8 hover:scale-110" />
+          </Link>
+          <Link href={"https://linkedin.com/in/meSahilThakur/"} target="_blank">
+            <FaLinkedin className="h-8 w-8 bg-blue-700 rounded hover:scale-110" />
+          </Link>
+          <Link href={"https://instagram.com/me.sahilthakur?igshid=MzNINGNkZWQ4Mg=="} target="_blank">
+            <FaInstagram className="h-8 w-8 bg-gradient-to-br from-purple-700 via-pink-500 to-yellow-500 rounded hover:scale-110" />
+          </Link>
+          <Link href={"https://facebook.com/sahil.thakur.5855594?mibextid=AQCFcj8imgCIWYJ5"} target="_blank">
+            <FaFacebook className="h-8 w-8 bg-blue-700 rounded hover:scale-110" />
+          </Link>
+        </div>
+
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
             <button onClick={()=>setNavbarOpen(true)} className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white">
@@ -44,6 +62,7 @@ const Navbar = () => {
             </button>
           )}
         </div>
+
 
         <div id="navbar" className="menu hidden md:block md:w-auto">
           <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
