@@ -11,7 +11,7 @@ import {
   FaReact,
 } from "react-icons/fa";
 import { BiLogoJavascript } from "react-icons/bi";
-import { TbBrandNextjs, TbBrandVscode } from "react-icons/tb";
+import { TbBrandNextjs, TbBrandTailwind, TbBrandVscode } from "react-icons/tb";
 import { animate, motion, useInView } from "framer-motion";
 
 const techskill = [
@@ -69,6 +69,11 @@ const techskill = [
     id: 11,
     skill: <TbBrandVscode className="w-16 h-16 text-blue-600 " />,
     title: "VS-Code",
+  },
+  {
+    id: 12,
+    skill: <TbBrandTailwind className="w-16 h-16 text-blue-500 " />,
+    title: "TailwindCSS",
   },
 ];
 
