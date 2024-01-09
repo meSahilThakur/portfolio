@@ -1,10 +1,8 @@
 'use client'
-import { LinkIcon } from "@heroicons/react/24/solid";
 import axios from "axios";
-import Link from "next/link";
 import React, { useState } from "react";
 import Swal from 'sweetalert2'
-import {FaFacebook, FaGithub, FaInstagram, FaLinkedin} from 'react-icons/fa';
+import SocialLinks from "./SocialLinks";
 
 const EmailSection = () => {
     
@@ -104,20 +102,8 @@ const EmailSection = () => {
           Whether you have a question or just want to say hi, I'll try my best
           to get back to you!
         </p>
-        <div className="socials flex flex-row gap-2">
-          <Link href={"https://github.com/meSahilThakur/"} target="_blank">
-            <FaGithub className="h-8 w-8 hover:scale-110" />
-          </Link>
-          <Link href={"https://linkedin.com/in/meSahilThakur/"} target="_blank">
-            <FaLinkedin className="h-8 w-8 bg-blue-700 rounded hover:scale-110" />
-          </Link>
-          <Link href={"https://instagram.com/me.sahilthakur?igshid=MzNINGNkZWQ4Mg=="} target="_blank">
-            <FaInstagram className="h-8 w-8 bg-gradient-to-br from-purple-700 via-pink-500 to-yellow-500 rounded hover:scale-110" />
-          </Link>
-          <Link href={"https://facebook.com/sahil.thakur.5855594?mibextid=AQCFcj8imgCIWYJ5"} target="_blank">
-            <FaFacebook className="h-8 w-8 bg-blue-700 rounded hover:scale-110" />
-          </Link>
-        </div>
+        
+        <SocialLinks />
       </div>
       <div className="mt-4 md:mt-0 z-10">
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">

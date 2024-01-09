@@ -86,7 +86,7 @@ const SkillsSection = () => {
 // };
 
   return (
-    <div id="SkillsSection" className="md:p-10 overflow-hidden">
+    <div id="skills" className="md:p-10 overflow-hidden">
       <h2 className="text-center text-white text-4xl font-bold mt-4">
         Tools & Tecnologies
       </h2>
@@ -99,17 +99,15 @@ const SkillsSection = () => {
             // animate={isInView ? "animate" : "initial"}
             // transition={{duration:0.3, delay: index * 0.4}}
 
-            initial = {{x:100, opacity:0, scale:2.5}}
-            whileInView={{x:0, opacity:1, scale:1}}
-            transition={{duration:0.3, delay:index * 0.3}}
+            initial = {{rotateZ:360, x:100, opacity:0, scale:2.5}}
+            whileInView={{rotateZ:0, x:0, opacity:1, scale:1}}
+            transition={{duration:0.3, delay:index * 0.2}}
             viewport={{once: true}}
 
             className="flex flex-col justify-center items-center gap-2 p-4 "
           >
-          {/* <div > */}
             <div key={skill.id}>{skill.skill}</div>
             <h2 >{skill.title}</h2>
-          {/* </div> */}
           </motion.div>
         ))}
       </div>

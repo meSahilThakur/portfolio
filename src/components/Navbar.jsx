@@ -5,13 +5,17 @@ import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
 
-import {FaFacebook, FaGithub, FaInstagram, FaLinkedin} from 'react-icons/fa';
+import SocialLinks from "./SocialLinks";
 
 
 const navLinks = [
   {
     title: "About",
     path: "#about",
+  },
+  {
+    title: "Skills",
+    path: "#skills",
   },
   {
     title: "Projects",
@@ -28,7 +32,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed mx-auto border border-[#33353F] top-0 right-0 left-0 z-20 bg-[#121212] bg-opacity-90">
-      <div className="flex container lg:py-4 flex-wrap justify-between items-center mx-auto px-4 py-2">
+      <div className="flex container lg:py-4 flex-wrap justify-between items-center mx-auto px-4 md:px-10 py-2">
         <Link
           href={"/"}
           className="text-3xl md:text-5xl font-semibold text-secondary-500"
@@ -36,20 +40,7 @@ const Navbar = () => {
           ST
         </Link>
 
-        <div className="socials flex flex-row gap-2">
-          <Link href={"https://github.com/meSahilThakur/"} target="_blank">
-            <FaGithub className="h-8 w-8 hover:scale-110" />
-          </Link>
-          <Link href={"https://linkedin.com/in/meSahilThakur/"} target="_blank">
-            <FaLinkedin className="h-8 w-8 bg-blue-700 rounded hover:scale-110" />
-          </Link>
-          <Link href={"https://instagram.com/me.sahilthakur?igshid=MzNINGNkZWQ4Mg=="} target="_blank">
-            <FaInstagram className="h-8 w-8 bg-gradient-to-br from-purple-700 via-pink-500 to-yellow-500 rounded hover:scale-110" />
-          </Link>
-          <Link href={"https://facebook.com/sahil.thakur.5855594?mibextid=AQCFcj8imgCIWYJ5"} target="_blank">
-            <FaFacebook className="h-8 w-8 bg-blue-700 rounded hover:scale-110" />
-          </Link>
-        </div>
+        <SocialLinks />
 
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
